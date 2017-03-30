@@ -32,7 +32,7 @@ npm run build
 ```
 #### Run postgres & server
 ```
-docker-compose up
+docker-compose up -d
 node server/server
 ```
 #### Open
