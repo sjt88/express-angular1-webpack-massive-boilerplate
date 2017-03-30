@@ -33,7 +33,7 @@ npm run build
 #### Run postgres & server
 ```
 docker-compose up -d
-node server/server
+npm run dev-server
 ```
 #### Open
 Point your browser to [http://localhost:3000](http://localhost:3000)
