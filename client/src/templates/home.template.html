@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="jumbotron">
+        <h3>Express + Passport + Massive + Angular 1 + Webpack boilerplate</h3>
+        <div ng-show="!home.LoginService.isLoggedIn()">
+	        <p>You are not logged in. Click the button below to log in or register:</p>
+            <a class="btn btn-primary" ui-sref="login">Login</a>
+            <a class="btn btn-warning" ui-sref="register">Register</a>
+        </div>
+		<div ng-show="home.LoginService.isLoggedIn()">
+        	Welcome back {{ home.username }}!
+		</div>
+    </div>
+    <div ng-show="home.isLoggedIn" class="container-fluid">
+    </div>
+</div>

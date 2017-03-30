@@ -1,0 +1,58 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="col-md-12 col-sm-12">
+            <div class="row">
+                <h6>User Detail</h6>
+                <div class="list-group">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <tr>
+                                    <td><b>ID</b></td>
+                                    <td>{{ userDetail.model.user.id }}</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Username</b></td>
+                                    <td>{{ userDetail.model.user.username }}</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Email</b></td>
+                                    <td>{{ userDetail.model.user.email }}</td>
+                                </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+            <div class="row">
+                <h6>Available Scopes</h6>
+                <div class="list-group scope-list">
+                    <a class="list-group-item" ng-repeat="scope in userDetail.getNotAuthorizedScopes()" ng-click="userDetail.addScope(scope)">
+                        <strong>{{ scope.name }}</strong>
+                        <br> {{ scope.description }}
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+            <div class="row">
+                <h6>User Authorized Scopes</h6>
+                <div class="list-group scope-list">
+                    <a class="list-group-item" ng-repeat="scope in userDetail.getAuthorizedScopes()" ng-click="userDetail.removeScope(scope)">
+                        <strong>{{ scope.name }}</strong>
+                        <br> {{ scope.description }}
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12-col-sm-12">
+            <button class="btn btn-success" ng-click="userDetail.updateScopes()">
+                Save
+            </button>
+            <button class="btn btn-warning" ng-click="userDetail.resetUserModel()">
+                Reset
+            </button>
+        </div>
+    </div>
+</div>

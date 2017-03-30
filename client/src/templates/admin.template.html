@@ -1,0 +1,9 @@
+<div class="container-fluid">
+    <div class="panel panel-default">
+    <ul class="nav nav-tabs">
+        <li ng-class="{active: admin.model.nav.active == 'scopes'}"><a ng-click="admin.model.nav.active='scopes'" ui-sref="admin.scopes" data-toggle="tab" aria-expanded="true">Authorization</a></li>
+        <li ng-class="{active: admin.model.nav.active == 'users'}"><a ng-click="admin.model.nav.active='users'" ui-sref="admin.users" data-toggle="tab" aria-expanded="false">Users</a></li>
+    </ul>
+				<ui-view></ui-view>
+    </div>
+</div>

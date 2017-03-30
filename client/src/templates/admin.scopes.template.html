@@ -1,0 +1,30 @@
+<div class="panel-heading">
+    <h1 class="panel-title"> Authorization Scope Management </h1>
+</div>
+<div class="panel-body">
+    <div class="col-md-6 col-sm-6">
+        <h6>Create Scope</h6>
+        <form name="createScope">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" required ng-model="scopes.model.create.name" class="form-control" id="name" />
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input type="text" required ng-model="scopes.model.create.description" class="form-control" id="description" />
+            </div>
+            <input type="submit" ng-click="scopes.submitCreateScopeForm()" ng-disabled="createScope.$invalid" class="btn btn-primary">
+            <input type="button" ng-click="scopes.clearCreateScopeForm()" class="btn btn-warning" value="Clear"></input>
+        </form>
+    </div>
+    <div class="col-md-6 col-sm-6">
+        <h6>Scopes</h6>
+        <div class="list-group scope-list">
+            <a class="list-group-item" ng-class="{'active': scopes.scopeIsSelected($index)}" ng-repeat="scope in scopes.model.scopes" ng-click="scopes.selectScope($index)">
+                <strong>{{ scope.name }}</strong><br>
+                {{ scope.description }}
+            </a>
+        </div>
+        <input type="button" ng-click="scopes.deleteSelectedScopes()" class="btn btn-danger" value="Delete Selected"></input>
+    </div>
+</div>

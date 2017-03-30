@@ -1,0 +1,23 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" ng-click="isNavCollapsed = !isNavCollapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Brand</a>
+        </div>
+
+        <ul class="nav navbar-nav collapse navbar-collapse" uib-collapse="isNavCollapsed">
+            <li ui-sref-active="{'active': 'login'}"><a ui-sref="login" ng-show="!LoginService.loggedIn">Login</a></li>
+            <li ui-sref-active="{'active': 'register'}"><a ui-sref="register" ng-show="!LoginService.loggedIn">Register</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right collapse navbar-collapse" uib-collapse="isNavCollapsed">
+            <li><a ui-sref="admin"  ui-sref-opts="{reload: true}" ng-show="LoginService.loggedIn">Admin</a></li>
+            <li><a ui-sref="profile" ng-show="LoginService.loggedIn">{{ LoginService.loginName }}</a></li>
+            <li><a ui-sref="logout" ng-show="LoginService.loggedIn">Logout</a></li>
+        </ul>
+    </div>
+</nav>

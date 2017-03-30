@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+    postgres:
+        image: postgres
+        volumes:
+            - /home/simon/pg/auth-test:/var/lib/postgresql/data/pgdata
+        environment: 
+            - POSTGRES_PASSWORD=simon
+            - POSTGRES_USER=simon
+            - PGDATA=/var/lib/postgresql/data/pgdata
+            - POSTGRES_DB=auth-test
+        ports:
+            - "5432:5432"
