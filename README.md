@@ -23,6 +23,7 @@ npm install
 ```
 #### Apply postgreSQL migrations
 ```
+source ./env.sh # exports postgres connection string variable
 npm run pg-migrate-up
 ```
 #### Build Client
