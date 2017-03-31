@@ -21,18 +21,23 @@ Install:
 ```
 npm install
 ```
-#### Apply postgreSQL migrations
+#### Run PostgreSQL & Apply migrations
 ```
-source ./env.sh # exports postgres connection string variable
+# run postgreSQL with compose in detached mode
+docker-compose -f docker-compose-dev.yml up -d
+
+# export postgres connection string variable
+source ./env.sh
+
+# apply migrations
 npm run pg-migrate-up
 ```
 #### Build Client
 ```
 npm run build
 ```
-#### Run postgres & server
+#### Run dev server
 ```
-docker-compose up -d
 npm run dev-server
 ```
 #### Open
