@@ -96,6 +96,7 @@ import "bootswatch/{bootswatch_theme}/bootstrap.min.css";
 ---
 
 ## TODO:
+- password hashing
 - tests
 - add SASS to webpack build pipeline
 - development/production environment settings
